@@ -8,5 +8,10 @@ Reinforcement_Learning_Policy_Gradient_Algorithm
 
 # 代码运行
 
-`python train.py  # 训练决策网络`  
-`python test.py   # 可视化智能体决策效果`  
+```python
+python train.py  # 训练决策网络
+python test.py   # 可视化智能体决策效果  
+```
+
+# 实验结果
+当网络参数随机初始化时，智能体决策的成功率为20.4%；而当训练20000个Epoch，采用Adam优化器，学习率learning rate设为0.001，每次梯度更新只采样一条轨迹时，智能体决策的成功率为95.9%。
