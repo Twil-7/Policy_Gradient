@@ -46,7 +46,7 @@ python test.py   # 可视化智能体决策效果
 当网络参数随机初始化时，智能体决策的成功率为20.4%；而当训练20000个Epoch，智能体决策的成功率为95.9%。
 
 <div align="center">
-  <video controls width="400">
-    <source src="./files/success.mp4" type="video/mp4">
-  </video>
+    <a href="https://example.com/your-video.mp4">
+        <img src="./files/success.mp4" alt="Video Preview">
+    </a>
 </div>
