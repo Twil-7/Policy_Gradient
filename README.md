@@ -6,9 +6,11 @@ Reinforcement_Learning_Policy_Gradient_Algorithm
 
 有一个智能体方块，从指定高度(ℎ=10)的某个随机水平位置开始，每次下降一个单位，下降过程中智能体能够自主决策，每次只有两种选择，向左或者向右移动一个单位。下降过程不能越界，但仍可继续决策。最终目标是落在安全区域。
 
+![env](./files/1.png)
+
 # 代码运行
 
-```python
+```bash
 python train.py  # 训练决策网络
 python test.py   # 可视化智能体决策效果  
 ```
