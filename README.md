@@ -12,10 +12,35 @@ Reinforcement_Learning_Policy_Gradient_Algorithm
 
 # 代码运行
 
+采用一个3层的MLP网络作为决策模型，输入归一化后的水平和竖直坐标，输出决策概率。
+
+```bash
+class PolicyNetwork(nn.Module):
+    def __init__(self, input_size, hidden_size=128):
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Linear(input_size, hidden_size),
+            nn.ReLU(),
+            nn.Linear(hidden_size, hidden_size),
+            nn.ReLU(),
+            nn.Linear(hidden_size, 2),
+            nn.Softmax(dim=-1))
+
+    def forward(self, x):
+        return self.net(x)
+```
+
+训练20000个Epoch，采用Adam优化器，学习率learning rate设为0.001，每次梯度更新只采样一条轨迹。
+
+<div align="center">
+  <img src="./files/2.png" alt="train" width="400"/>
+</div>
+
+
 ```bash
 python train.py  # 训练决策网络
 python test.py   # 可视化智能体决策效果  
 ```
 
 # 实验结果
-当网络参数随机初始化时，智能体决策的成功率为20.4%；而当训练20000个Epoch，采用Adam优化器，学习率learning rate设为0.001，每次梯度更新只采样一条轨迹时，智能体决策的成功率为95.9%。
+当网络参数随机初始化时，智能体决策的成功率为20.4%；而当训练20000个Epoch，智能体决策的成功率为95.9%。
